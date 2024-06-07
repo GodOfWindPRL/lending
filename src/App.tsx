@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { chains } from 'configs/chains';
+import { useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Routers from 'routers';
+import { useAccount, useDisconnect, useNetwork, useSwitchNetwork } from "wagmi";
 
-function App() {
+window.Buffer = window.Buffer || require("buffer").Buffer;
+
+const DEFAULT_CHAIN = chains[0].id;
+
+const App = () => {
+  const { chain } = useNetwork();
+  const { switchNetwork } = useSwitchNetwork();
+  const { address } = useAccount();
+  const { disconnect } = useDisconnect();
+
+  useEffect(() => {
+    if (chain?.id !== DEFAULT_CHAIN) {
+      // dispatch(changeNetwork(false));
+      switchNetwork && switchNetwork(DEFAULT_CHAIN);
+    } else {
+      // dispatch(changeNetwork(true));
+    }
+  }, [chain])
+
+  useEffect(() => {
+    if (address === undefined) {
+      disconnect();
+      removeLocalStorage()
+    }
+  }, [address])
+
+  const removeLocalStorage = () => {
+    localStorage.removeItem('wagmi.connectedRdns');
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routers />
+    </BrowserRouter>
   );
 }
 

@@ -11,3 +11,220 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Kanit";
+  src: url("assets/fonts/Kanit-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kanit-Semibold";
+  src: url("assets/fonts/Kanit-SemiBold.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kanit-Bold";
+  src: url("assets/fonts/Kanit-Bold.ttf") format("truetype");
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  color: white;
+  font-family: 'Kanit';
+  scroll-behavior: smooth;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+button,
+button:active,
+button:focus {
+  border: none;
+  outline: none;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-0 {
+  font-family: "Kanit";
+  line-height: 18.2px;
+  font-size: 14px;
+}
+
+.text-1 {
+  font-family: "Kanit";
+  line-height: 20.8px;
+  font-size: 16px;
+}
+
+.text-12 {
+  font-family: "Kanit";
+  line-height: 26px;
+  font-size: 18px;
+}
+
+.text-2 {
+  font-family: "Kanit";
+  line-height: 26px;
+  font-size: 20px;
+}
+
+.text-22 {
+  font-family: "Kanit-SemiBold";
+  line-height: 26px;
+  font-size: 22px;
+}
+
+.text-3 {
+  font-size: 31px;
+  line-height: 40px;
+  font-family: "Kanit-Bold";
+  letter-spacing: 1px;
+}
+
+.text-4 {
+  font-size: 40px;
+  line-height: 48px;
+  font-family: "Kanit";
+  letter-spacing: 1px;
+}
+
+.text-5 {
+  font-size: 58px;
+  line-height: 64px;
+  font-family: "Kanit-SemiBold";
+  letter-spacing: 1px;
+}
+
+.color-white {
+  color: white;
+}
+
+.color-yellow {
+  color: rgb(222, 184, 12);
+}
+
+
+.color-black {
+  color: black;
+}
+
+.color-green {
+  color: green;
+}
+
+.color-red {
+  color: red;
+}
+
+.color-gray {
+  color: rgb(168, 167, 167);
+}
+
+.color-blue {
+  color: #5EB5F7;
+}
+
+.text-semibold {
+  font-weight: bold;
+}
+
+.text-bold {
+  font-weight: bolder;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1199px) {
+  .text-0 {
+    line-height: 16px;
+    font-size: 12px;
+  }
+  
+  .text-1 {
+    line-height: 18px;
+    font-size: 14px;
+  }
+  
+  .text-12 {
+    line-height: 22px;
+    font-size: 16px;
+  }
+  
+  .text-2 {
+    line-height: 24px;
+    font-size: 18px;
+  }
+  
+  .text-22 {
+    line-height: 26px;
+    font-size: 22px;
+  }
+  
+  .text-3 {
+    font-size: 28px;
+    line-height: 38px;
+  }
+  
+  .text-4 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  
+  .text-5 {
+    font-size: 48px;
+    line-height:56px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .text-4 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  
+  .text-5 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+
+input,
+input:active,
+input:focus,
+textarea,
+textarea:active,
+textarea:focus {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.input-err {
+  outline: 1px solid red !important;
+}
